@@ -1,5 +1,8 @@
-class Person
+require "./nameable.rb"
+
+class Person < Nameable
   def initialize(age, name = 'Unknown', parent_permission: true)
+    super()
     @id = Random.rand(1..1000)
     @name = name
     @age = age
@@ -16,6 +19,11 @@ class Person
     true
   end
 
+  def correct_name
+    @name
+  end
+
+  # Private methods
   private
 
   def of_age
