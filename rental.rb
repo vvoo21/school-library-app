@@ -12,4 +12,3 @@ class Rental
     person.rentals << self
   end
 end
-
