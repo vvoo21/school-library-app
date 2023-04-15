@@ -96,4 +96,30 @@ class App
     end
   end
 
+  def create_student(name, age)
+    student = Student.new(nil, age, name)
+    @people << student
+    puts 'Student created successfully'
+    start
+  end
+
+  def create_teacher(name, age)
+    teacher = Teacher.new(nil, age, name)
+    @people << teacher
+    puts 'Teacher created successfully'
+    start
+  end
+
+  def create_book
+    print 'Title: '
+    title = gets.chomp
+    print 'Author: '
+    author = gets.chomp
+    book = Book.new(title, author)
+    @books << book
+    puts 'Book created successfully'
+    puts ''
+    start
+  end
+
 end
