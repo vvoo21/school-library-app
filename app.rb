@@ -165,5 +165,4 @@ class App
     end
     start
   end
-
 end
