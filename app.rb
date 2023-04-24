@@ -2,8 +2,16 @@ require './book'
 require './student'
 require './teacher'
 require './rental'
+require './list_books'
+require './list_people'
+require './create_person'
+# require './create_book'
+# require './create_rental'
+# require './list_rentals'
 
 class App
+  include CreatePerson
+
   def initialize
     @books = []
     @people = []
@@ -50,64 +58,6 @@ class App
     options
     choice = gets.chomp.to_i
     choose_an_option(choice)
-  end
-
-  def list_books
-    if @books.empty?
-      puts 'The list is empty'
-      puts ''
-      start
-    end
-    @books.each do |book|
-      puts "Title: #{book.title}, Author: #{book.author}"
-    end
-    puts ''
-    start
-  end
-
-  def list_people
-    if @people.empty?
-      puts 'The list is empty'
-      puts ''
-      start
-    end
-    @people.each do |person|
-      puts "[#{person.class.name}]  Name: #{person.name}, ID: #{person.id} Age: #{person.age}"
-    end
-    puts ''
-    start
-  end
-
-  def create_person
-    print 'Do you want to create a student (1) or a teacher (2)? [Input only the number]:'
-    choice = gets.chomp.to_i
-    if choice != 1 && choice != 2
-      puts 'Invalid input'
-      start
-    end
-    print 'Name: '
-    name = gets.chomp
-    print 'Age: '
-    age = gets.chomp.to_i
-    if choice == 1
-      create_student(name, age)
-    elsif choice == 2
-      create_teacher(name, age)
-    end
-  end
-
-  def create_student(name, age)
-    student = Student.new(nil, age, name)
-    @people << student
-    puts 'Student created successfully'
-    start
-  end
-
-  def create_teacher(name, age)
-    teacher = Teacher.new(nil, age, name)
-    @people << teacher
-    puts 'Teacher created successfully'
-    start
   end
 
   def create_book
