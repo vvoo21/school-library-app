@@ -16,7 +16,7 @@
 - [🙏 Acknowledgements](#acknowledgements)
 - [📝 License](#license)
 
-# 📖 School Library App  <a name="about-project"></a>
+# 📖 School Library App <a name="about-project"></a>
 
 **School Library App** is a tool to record what books are in the library and who borrows them. The application will allow you to: add new students or teachers, add new books, and save records of who borrowed a given book and when.
 
@@ -52,7 +52,7 @@
 In order to run this project you need:
 
 - [Ruby](https://www.ruby-lang.org/en/) installed and running
-- You should be able to use [IRB](https://en.wikipedia.org/wiki/Ruby_(programming_language)#Features)
+- You should be able to use [IRB](<https://en.wikipedia.org/wiki/Ruby_(programming_language)#Features>)
 
 ### Setup
 
@@ -74,13 +74,19 @@ Install the project dependencies with:
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## 👥 Author <a name="authors"></a>
+## 👥 Authors <a name="authors"></a>
 
 👤 **Vanessa Oliveros Padron**
 
 - GitHub: [@vvoo21](https://github.com/vvoo21)
 - Twitter: [@vaneoliverosp](https://twitter.com/vaneoliverosp)
 - LinkedIn: [vaneoliverosp](https://www.linkedin.com/in/vaneoliverosp/)
+
+👤 **Jakaria Jishan**
+
+- GitHub: [@jakaria](https://github.com/JakariaJishan)
+- Twitter: [@jakaria](https://twitter.com/jakariajishan)
+- LinkedIn: [jakaria](https://www.linkedin.com/in/jakariajishan/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

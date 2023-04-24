@@ -5,9 +5,9 @@ require './rental'
 require './list_books'
 require './list_people'
 require './create_person'
-# require './create_book'
-# require './create_rental'
-# require './list_rentals'
+require './create_book'
+require './create_rental'
+require './list_rentals'
 
 class App
   include CreatePerson
@@ -60,59 +60,59 @@ class App
     choose_an_option(choice)
   end
 
-  def create_book
-    print 'Title: '
-    title = gets.chomp
-    print 'Author: '
-    author = gets.chomp
-    book = Book.new(title, author)
-    @books << book
-    puts 'Book created successfully'
-    puts ''
-    start
-  end
+  # def create_book
+  #   print 'Title: '
+  #   title = gets.chomp
+  #   print 'Author: '
+  #   author = gets.chomp
+  #   book = Book.new(title, author)
+  #   @books << book
+  #   puts 'Book created successfully'
+  #   puts ''
+  #   start
+  # end
 
-  def create_rental
-    if @books.empty? || @people.empty?
-      puts 'There are no books or people created yet'
-      start
-    end
-    puts 'Select a book from the following list by number'
-    @books.each_with_index do |book, index|
-      puts "#{index}) Title: #{book.title}, Author: #{book.author}"
-    end
-    id_book = gets.chomp.to_i
+  # def create_rental
+  #   if @books.empty? || @people.empty?
+  #     puts 'There are no books or people created yet'
+  #     start
+  #   end
+  #   puts 'Select a book from the following list by number'
+  #   @books.each_with_index do |book, index|
+  #     puts "#{index}) Title: #{book.title}, Author: #{book.author}"
+  #   end
+  #   id_book = gets.chomp.to_i
 
-    puts 'Select a person from the following list by number (not ID)'
-    @people.each_with_index do |person, index|
-      puts "#{index}) [#{person.class.name}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
-    end
-    id_person = gets.chomp.to_i
+  #   puts 'Select a person from the following list by number (not ID)'
+  #   @people.each_with_index do |person, index|
+  #     puts "#{index}) [#{person.class.name}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
+  #   end
+  #   id_person = gets.chomp.to_i
 
-    print 'Date: '
-    date = gets.chomp
-    rental = Rental.new(date, @books[id_book], @people[id_person])
-    @rentals << rental
-    puts 'Rental created successfully'
-    start
-  end
+  #   print 'Date: '
+  #   date = gets.chomp
+  #   rental = Rental.new(date, @books[id_book], @people[id_person])
+  #   @rentals << rental
+  #   puts 'Rental created successfully'
+  #   start
+  # end
 
-  def list_rentals
-    if @rentals.empty?
-      puts 'No rentals available'
-      start
-    end
-    print 'ID of person: '
-    id_person = gets.chomp.to_i
-    puts 'Rentals: '
-    rentals = @rentals.select { |rental| rental.person.id == id_person }
-    if rentals.empty?
-      puts 'No rentals available for this ID'
-      start
-    end
-    rentals.each do |rental|
-      puts "#{rental.date}, Book: #{rental.book.title} by #{rental.book.author}"
-    end
-    start
-  end
+  # def list_rentals
+  #   if @rentals.empty?
+  #     puts 'No rentals available'
+  #     start
+  #   end
+  #   print 'ID of person: '
+  #   id_person = gets.chomp.to_i
+  #   puts 'Rentals: '
+  #   rentals = @rentals.select { |rental| rental.person.id == id_person }
+  #   if rentals.empty?
+  #     puts 'No rentals available for this ID'
+  #     start
+  #   end
+  #   rentals.each do |rental|
+  #     puts "#{rental.date}, Book: #{rental.book.title} by #{rental.book.author}"
+  #   end
+  #   start
+  # end
 end
