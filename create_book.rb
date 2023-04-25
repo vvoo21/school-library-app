@@ -7,6 +7,7 @@ def create_book
   author = gets.chomp
   book = Book.new(title, author)
   @books << book
+  File.write('books.json', JSON.pretty_generate(@books.map { |b| { title: b.title, author: b.author } }))
   puts 'Book created successfully'
   puts ''
   start

@@ -8,6 +8,7 @@ require './create_person'
 require './create_book'
 require './create_rental'
 require './list_rentals'
+require './load_books'
 
 class App
   include CreatePerson
@@ -55,6 +56,7 @@ class App
   # rubocop:enable Metrics/CyclomaticComplexity
 
   def start
+    load_books
     options
     choice = gets.chomp.to_i
     choose_an_option(choice)
