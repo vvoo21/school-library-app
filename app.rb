@@ -8,7 +8,7 @@ require './create_person'
 require './create_book'
 require './create_rental'
 require './list_rentals'
-require './load_books'
+require './load_data'
 
 class App
   include CreatePerson
@@ -58,31 +58,10 @@ class App
   def start
     load_books
     load_people
-    # load_rentals
+    load_rentals
     options
     choice = gets.chomp.to_i
     choose_an_option(choice)
   end
 
-
-  def load_people
-    if File.exist?('./people.json') && !File.empty?('./people.json')
-      json_string = File.read('people.json')
-      data = JSON.parse(json_string)
-      @people = data.map do |p| 
-        if p['type'] == 'Student'
-          Student.new(p['age'],nil, p['name'])
-        elsif p['type'] == 'Teacher'
-          Teacher.new(p['age'], nil, p['name'])
-        end
-      end
-    else
-      File.write('people.json', JSON.generate([])) unless File.exist?('people.json')
-      
-    end
-
-    # if File.exist?('./people.json') && !File.empty?('./people.json')
-    #   File.write('people.json', JSON.generate([])) unless File.exist?('people.json')
-    # else
-  end
 end
