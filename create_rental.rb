@@ -22,6 +22,7 @@ def create_rental
   date = gets.chomp
   rental = Rental.new(date, @books[id_book], @people[id_person])
   @rentals << rental
+  File.write('rentals.json', JSON.pretty_generate(@rentals.map { |r| { date: r.date, book: r.book.title, person: r.person.name } }))
   puts 'Rental created successfully'
   start
 end

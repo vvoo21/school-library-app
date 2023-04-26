@@ -1,20 +1,32 @@
 [
   {
-    "type": "Teacher",
-    "name": 34,
-    "age": "Unknown",
-    "id": 592
+    "name": "vanessa",
+    "age": 32,
+    "id": 24
   },
   {
-    "type": "Teacher",
-    "name": 33,
-    "age": "Unknown",
-    "id": 921
+    "name": "jaime",
+    "age": 52,
+    "id": 38
   },
   {
-    "type": "Student",
-    "name": 44,
-    "age": "jack",
-    "id": 80
+    "name": "diana",
+    "age": 17,
+    "id": 539
+  },
+  {
+    "name": "pamela",
+    "age": 40,
+    "id": 998
+  },
+  {
+    "name": "Jorge",
+    "age": 16,
+    "id": 782
+  },
+  {
+    "name": "Carola",
+    "age": 22,
+    "id": 281
   }
 ]

@@ -58,6 +58,7 @@ class App
   def start
     load_books
     load_people
+    load_rentals
     options
     choice = gets.chomp.to_i
     choose_an_option(choice)

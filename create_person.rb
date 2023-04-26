@@ -13,28 +13,26 @@ module CreatePerson
     print 'Age: '
     age = gets.chomp.to_i
     if choice == 1
-      create_student(name, age)
-      File.write('people.json', JSON.pretty_generate(@people.map { |b| { type:b.class.name, name: b.name, age: b.age, id:b.id } }))
-      start
+      create_student(age, name)
     elsif choice == 2
-      create_teacher(name, age)
-      File.write('people.json', JSON.pretty_generate(@people.map { |b| { type: b.class.name, name: b.name, age: b.age } }))
-      start
+      create_teacher(age, name)
     end
-
-
   end
 
-  def create_student(name, age)
+  def create_student(age, name)
     student = Student.new(nil, age, name)
     @people << student
+    File.write('people.json', JSON.pretty_generate(@people.map { |b| { name: b.name, age: b.age, id: b.id } }))
     puts 'Student created successfully'
+    start
   end
 
-  def create_teacher(name, age)
+  def create_teacher(age, name)
     teacher = Teacher.new(nil, age, name)
     @people << teacher
+    File.write('people.json', JSON.pretty_generate(@people.map { |b| { name: b.name, age: b.age, id: b.id } }))
     puts 'Teacher created successfully'
+    start
   end
 
 end
