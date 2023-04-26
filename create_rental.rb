@@ -1,6 +1,9 @@
 require_relative 'rental'
 require_relative 'app'
 
+# rubocop:disable Metrics/AbcSize
+# rubocop:disable Metrics/MethodLength
+# rubocop:disable Layout/LineLength
 def create_rental
   if @books.empty? || @people.empty?
     puts 'There are no books or people created yet'
@@ -22,6 +25,12 @@ def create_rental
   date = gets.chomp
   rental = Rental.new(date, @books[id_book], @people[id_person])
   @rentals << rental
+  File.write('rentals.json', JSON.pretty_generate(@rentals.map do |b|
+                                                    { date: b.date, person: { name: b.person.name, age: b.person.age, id: b.person.id, type: b.person.class.name }, book: { title: b.book.title, author: b.book.author } }
+                                                  end))
   puts 'Rental created successfully'
   start
 end
+# rubocop:enable Metrics/AbcSize
+# rubocop:enable Metrics/MethodLength
+# rubocop:enable Layout/LineLength

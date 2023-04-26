@@ -1,0 +1,28 @@
+[
+  {
+    "date": "2023-02-02",
+    "person": {
+      "name": "jose",
+      "age": 33,
+      "id": 821,
+      "type": "Teacher"
+    },
+    "book": {
+      "title": "2",
+      "author": "2"
+    }
+  },
+  {
+    "date": "3030-03-03",
+    "person": {
+      "name": "jishan",
+      "age": 23,
+      "id": 618,
+      "type": "Student"
+    },
+    "book": {
+      "title": "New_book",
+      "author": "James"
+    }
+  }
+]
