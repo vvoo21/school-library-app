@@ -63,5 +63,4 @@ class App
     choice = gets.chomp.to_i
     choose_an_option(choice)
   end
-
 end

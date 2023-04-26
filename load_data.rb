@@ -8,22 +8,23 @@ def load_books
   if File.exist?('./books.json') && !File.empty?('./books.json')
     json_string = File.read('books.json')
     data = JSON.parse(json_string)
-    @books = data.map do |b| 
+    @books = data.map do |b|
       Book.new(b['title'], b['author'])
     end
   else
     File.write('books.json', JSON.generate([])) unless File.exist?('books.json')
-    
+
   end
 end
 
+# rubocop:disable Metrics/PerceivedComplexity
 def load_people
   if File.exist?('./people.json') && !File.empty?('./people.json')
     json_string = File.read('people.json')
     data = JSON.parse(json_string)
-    @people = data.map do |p| 
+    @people = data.map do |p|
       if p['type'] == 'Student'
-        Student.new(p['age'],nil, p['name'])
+        Student.new(p['age'], nil, p['name'])
       elsif p['type'] == 'Teacher'
         Teacher.new(p['age'], nil, p['name'])
       end
@@ -33,6 +34,7 @@ def load_people
 
   end
 end
+# rubocop:enable Metrics/PerceivedComplexity
 
 def load_rentals
   if File.exist?('rentals.json') && !File.empty?('rentals.json')
