@@ -1,32 +1,14 @@
 [
   {
-    "name": "vanessa",
-    "age": 32,
-    "id": 24
+    "type": "Student",
+    "name": "jack",
+    "age": 33,
+    "id": 98
   },
   {
-    "name": "jaime",
-    "age": 52,
-    "id": 38
-  },
-  {
-    "name": "diana",
-    "age": 17,
-    "id": 539
-  },
-  {
-    "name": "pamela",
-    "age": 40,
-    "id": 998
-  },
-  {
-    "name": "Jorge",
-    "age": 16,
-    "id": 782
-  },
-  {
-    "name": "Carola",
-    "age": 22,
-    "id": 281
+    "type": "Teacher",
+    "name": "jose",
+    "age": 33,
+    "id": 778
   }
 ]

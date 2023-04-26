@@ -20,17 +20,17 @@ module CreatePerson
   end
 
   def create_student(age, name)
-    student = Student.new(nil, age, name)
+    student = Student.new( age,nil, name)
     @people << student
-    File.write('people.json', JSON.pretty_generate(@people.map { |b| { name: b.name, age: b.age, id: b.id } }))
+    File.write('people.json', JSON.pretty_generate(@people.map { |b| { type: b.class.name, name: b.name, age: b.age, id: b.id } }))
     puts 'Student created successfully'
     start
   end
 
   def create_teacher(age, name)
-    teacher = Teacher.new(nil, age, name)
+    teacher = Teacher.new( age,nil, name)
     @people << teacher
-    File.write('people.json', JSON.pretty_generate(@people.map { |b| { name: b.name, age: b.age, id: b.id } }))
+    File.write('people.json', JSON.pretty_generate(@people.map { |b| {type: b.class.name, name: b.name, age: b.age, id: b.id } }))
     puts 'Teacher created successfully'
     start
   end
