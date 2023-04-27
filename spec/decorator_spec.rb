@@ -7,7 +7,6 @@ require_relative '../trimmer_decorator'
 describe Nameable do
   let(:nameable) { Nameable.new }
 
-
   describe '#new' do
     it 'returns a Nameable object' do
       expect(nameable).to be_an_instance_of(Nameable)
