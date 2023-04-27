@@ -4,7 +4,7 @@ require_relative '../person'
 require_relative '../rental'
 
 describe Person do
-  let(:person) { Person.new( 19, 'Thomas') }
+  let(:person) { Person.new(19, 'Thomas') }
   let(:book) { Book.new('The RSpec Book', 'David Chelimsky') }
   let(:rental) { Rental.new('2023-04-26', book, person) }
 
@@ -22,19 +22,19 @@ describe Person do
   end
 
   describe '#can_use_services' do
-    it "return true if the person's age is >= 18 and has parental permission" do      
+    it "return true if the person's age is >= 18 and has parental permission" do
       expect(person).to be_truthy
     end
   end
 
   describe '#correct_name' do
-    it 'returns the correct name' do      
+    it 'returns the correct name' do
       expect(person.name).to eq('Thomas')
     end
   end
 
   describe '#of_age' do
-    it 'Check if the person is of legal age' do      
+    it 'Check if the person is of legal age' do
       expect(person.age).to be >= 18
     end
   end

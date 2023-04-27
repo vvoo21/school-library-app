@@ -5,7 +5,7 @@ require_relative '../rental'
 
 describe Book do
   let(:book) { Book.new('The RSpec Book', 'David Chelimsky') }
-  let(:person) { Person.new( 19, 'Thomas') }
+  let(:person) { Person.new(19, 'Thomas') }
   let(:rental) { Rental.new('2023-04-26', book, person) }
 
   describe '#new' do
@@ -34,9 +34,8 @@ describe Book do
 
   describe '#add_rental' do
     it 'Add a rental to rentals Array' do
-
       book.add_rental(rental)
-      
+
       expect(book.rentals.length).to eq 1
     end
   end

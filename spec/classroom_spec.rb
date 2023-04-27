@@ -4,7 +4,7 @@ require_relative '../classroom'
 
 describe Classroom do
   let(:classroom) { Classroom.new('Ruby') }
-  let(:student) { Student.new( 23, classroom, 'Joe') }
+  let(:student) { Student.new(23, classroom, 'Joe') }
 
   describe '#new' do
     it 'returns a Classroom object' do
@@ -26,7 +26,7 @@ describe Classroom do
 
   describe '#add_student' do
     it 'Add a student to students Array' do
-        classroom.add_student(student)  
+      classroom.add_student(student)
       expect(classroom.students.length).to eq(1)
     end
   end
