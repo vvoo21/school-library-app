@@ -13,8 +13,11 @@ class Person < Nameable
   end
 
   def add_rental(rental)
-    @rentals.push(rental)
+    return if @rentals.include?(rental)
+
+    @rentals << rental
     rental.person = self
+    rental.book.rentals << rental
   end
 
   def can_use_services
