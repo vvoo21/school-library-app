@@ -24,5 +24,31 @@
       "title": "New_book",
       "author": "James"
     }
+  },
+  {
+    "date": "2024-04-26",
+    "person": {
+      "name": "Diana",
+      "age": 26,
+      "id": 785,
+      "type": "Teacher"
+    },
+    "book": {
+      "title": "Ruby",
+      "author": "David"
+    }
+  },
+  {
+    "date": "2023-04-28",
+    "person": {
+      "name": "jose",
+      "age": 33,
+      "id": 821,
+      "type": "Teacher"
+    },
+    "book": {
+      "title": "New_book",
+      "author": "James"
+    }
   }
 ]

@@ -9,7 +9,10 @@ class Book
   end
 
   def add_rental(rental)
-    @rentals.push(rental)
+    return if @rentals.include?(rental)
+
+    @rentals << rental
     rental.book = self
+    rental.person.rentals << rental
   end
 end
